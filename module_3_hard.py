@@ -10,11 +10,7 @@ data_structure = [
 def calculate_structure_sum(*args):
     the_sum = 0
     for unit in args:
-        if isinstance(unit, list):
-            the_sum += calculate_structure_sum(*unit)
-        elif isinstance(unit, set):
-            the_sum += calculate_structure_sum(*unit)
-        elif isinstance(unit, tuple):
+        if isinstance(unit, list) or isinstance(unit, set) or isinstance(unit, tuple):
             the_sum += calculate_structure_sum(*unit)
         elif isinstance(unit, int):
             the_sum += unit
